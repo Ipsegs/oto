@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: otobo-ingress
+  namespace: otobo
+  annotations:
+    alb.ingress.kubernetes.io/group.name: eks-staging-alb-group
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/group.order: '30'
+spec:
+  tls:
+   - hosts:
+      - helpdesk.sabi.am
+     secretName: helpdesk.sabi.am-tls
+  rules:
+    - host: helpdesk.sabi.am
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: web
+                port:
+                  number: 80

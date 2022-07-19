@@ -1,0 +1,15 @@
+apiVersion: v1
+data:
+  COMPOSE_PROJECT_NAME: otobo
+  OTOBO_DB_ROOT_PASSWORD: !!Password2022
+  OTOBO_ELASTICSEARCH_ES_JAVA_OPTS: -Xms4g -Xmx4g
+  MYSQL_ROOT_PASSWORD: !!Password2022
+  MYSQL_USER: otobo
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    eks.amazonaws.com/nodegroup: Mid-Size-Node-Group-8Gig
+    io.kompose.service: daemon-env
+  name: env
+  namespace: otobo
