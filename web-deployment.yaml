@@ -28,6 +28,8 @@ spec:
       labels:
         io.kompose.service: web
     spec:
+      nodeSelector:
+        app: mid
       securityContext:
         runAsUser: 1000
         runAsGroup: 1000
