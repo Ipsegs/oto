@@ -22,6 +22,8 @@ spec:
       labels:
         io.kompose.service: redis
     spec:
+      nodeSelector:
+        app: mid
       containers:
       - name: redis
         image: redis:6.0.8-alpine
