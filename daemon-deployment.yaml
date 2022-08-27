@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    eks.amazonaws.com/nodegroup: Mid-Size-Node-Group-8Gig
     kompose.cmd: ./kompose convert -f otobo-base.yml
     kompose.version: 1.22.0 (955b78124)
   creationTimestamp: null
